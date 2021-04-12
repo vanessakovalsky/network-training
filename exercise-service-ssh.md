@@ -31,6 +31,17 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub user@serveur
 * * L'option -i permet de spécifier le fichier de clé publique à utiliser
 * * Ensuite nous spécifions l'utilisateur qui doit se connecter et le nom ou l'adresse IP du serveur 
 
+* En cas d'erreur `Permission denied (publickey).` :
+* * sur le client copier le contenu du fichier ~/.ssh/id_rsa.pub
+* * Coller ce contenu sur le serveur dans ~/.ssh/authorized_keys
+
+* Autre solution pour la même erreur :
+* * Sur le serveur : ouvrir le fichier /etc/ssh/sshd_config et remplacer la ligne
+`PasswordAuthentication no`
+par
+`PasswordAuthentication yes`
+* * Puis rédémarrer le service ssh (`service ssh restart`)
+
 * Pour se connecter, il ne reste plus qu'à ouvrir une connexion : 
 ```
 ssh user@serveur
