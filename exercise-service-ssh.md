@@ -46,6 +46,7 @@ par
 ```
 ssh user@serveur
 ```
+
 * SSH vous demande alors la passphrase pour vous utiliser votre clé (c'est celle que vous avez défini lors de la génération)
 * Vous devriez maintenant être connecté sur le serveur et pouvoir faire vos différentes actions
 
