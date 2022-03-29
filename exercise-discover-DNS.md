@@ -63,7 +63,7 @@ traceroute ­-nI 212.27.63.132
 Les routeurs 10 et 11 sont bien des routeurs de chez Free dans des sous-réseaux différents (les 2 adresses sont dans la plage 212.27.32.0 ­ 212.27.63.255 de chez Free)
 * On vérifie sur le site www.iana.org à qui appartient l'adresse 212.x.x.x. 
 ```
-wget ­-q ­-U "" -­O ­http://www.iana.org/assignments/ipv4­address­space/ipv4­address­space.xml | grep -­A 4 "212"
+curl -s https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.txt | grep  212
 ```
 L'IANA a attribué cette adresse 212/8 à RIPE NCC (Réseaux IP Européens Network Coordination Center) Europe depuis octobre 1997. RIPE l'a ensuite découpée en plusieurs adresses (RIPE a la charge du netmask)pour l'attribuer à différents ISP ou sites.
 
