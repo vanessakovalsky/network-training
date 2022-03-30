@@ -11,14 +11,14 @@
 * Déterminer combien de ping ont été émis à partir de votre machine ? 
 * Exécuter la commande suivante et vérifier quelles sont les statistiques affectées par son exécution : 
 ```
-ping www.ibm.fr ­s 1500 ­M do ­c 1
+ping www.ibm.fr -s 1500 -M do -c 1
 ```
 * Donner les options qui permettent d'afficher le nom et le PID desprocessus propriétaires des sockets TCP
-* Qu'est­ ce qu'une socket «unix»?
+* Qu'est ce qu'une socket «unix»?
 * Démarrer un serveur TCP sur le port 5000 (avec netcat) et observer dans quel état se trouve la socket?
 * Connecter un client TCP (avec telnet ou netcat) vers le port duserveur et observer les différents états avec la commande suivante.Commenter
 ```
-netstat ­nta | grep ­E ":5000|Address"
+netstat -nta | grep -E ":5000|Address"
 ```
 * Mettre fin au client et observer à nouveau les états. Commenter
 
