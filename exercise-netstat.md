@@ -28,28 +28,28 @@ Voici quelques commandes qui permettent d'exploiter les statistiques fournies pa
 
 * Compter les états des sockets passives et actives
 ```
-$ netstat ­nat | awk '{print $6}' | sort | uniq ­c | sort ­n
+$ netstat -nat | awk '{print $6}' | sort | uniq -c | sort -n
 ```
 * Compter les états des sockets pour une adresse IP en particulier
 ```
-netstat ­nat |grep {IP­address} | awk '{print $6}' | sort | uniq ­c |sort ­n
+netstat -nat |grep {IPaddress} | awk '{print $6}' | sort | uniq -c |sort -n
 ```
 * Afficher la liste des adresses IP connectés
 ```
-netstat ­nat | sed 1d | sed 1d | awk '{ print $5}' | cut ­d: ­f1 | sed­e '/^$/d' | uniq
+netstat -nat | sed 1d | sed 1d | awk '{ print $5}' | cut -d: -f1 | sed -e '/^$/d' | uniq
 ```
 * Afficher le nombre d'adresses IP connectés 
 ```
-netstat ­nat | sed 1d | sed 1d | awk '{ print $5}' | cut ­d: ­f1 | sed­e '/^$/d' | uniq | wc ­l
+netstat -nat | sed 1d | sed 1d | awk '{ print $5}' | cut -d: -f1 | sed -e '/^$/d' | uniq | wc -l
 ```
 * Compter le nombre de sockets connectés par adresse IP
 ```
-netstat ­atun | sed 1d | sed 1d | awk '{print $5}' | cut ­d: ­f1 | sed­e '/^$/d' |sort | uniq ­c | sort ­n
-netstat ­atun | awk '{print $5}' | sed ­n ­e '/[0­9]\{1,3\}\.[0­9]\{1,3\}\.[0­9]\{1,3\}\.[0­9]\{1,3\}/p' | sed 's/::ffff://' | cut ­d: ­f1| sort | uniq ­c | sort ­n
+netstat -atun | sed 1d | sed 1d | awk '{print $5}' | cut -d: -f1 | sed -e '/^$/d' |sort | uniq -c | sort -n
+netstat -atun | awk '{print $5}' | sed -n -e '/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/p' | sed 's/::ffff://' | cut -d: -f1| sort | uniq -c | sort -n
 ```
 * Compter le nombre de sockets dans l'état ESTABLISHED par adresse IP
 ```
-netstat ­atun | grep ESTABLISHED | awk '{print $5}' | cut ­d: ­f1 |sed ­e '/^$/d' |sort | uniq ­c | sort ­n
+netstat -atun | grep ESTABLISHED | awk '{print $5}' | cut -d: -f1 |sed -e '/^$/d' |sort | uniq -c | sort -n
 ```
 
 
