@@ -23,7 +23,7 @@
 * * id_rsa.pub : clé publique que l'on va déployer sur le serveur sur lequel on souhaite se connecter
 
 ## Déployer la clé et se connecter sur un serveur 
-* Nous allons copier la clé générée sur le serveur sur lequel nous souhaitons nous connecter. Pour cela on uutilise la commande ssh-copy-id 
+* Nous allons copier la clé générée sur le serveur sur lequel nous souhaitons nous connecter. Pour cela on utilise la commande ssh-copy-id 
 ```
 ssh-copy-id -i ~/.ssh/id_rsa.pub user@serveur
 ```
