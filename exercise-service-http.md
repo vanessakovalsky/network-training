@@ -35,7 +35,7 @@ yum install -y iptables #redhat
 * Activation des règles pour autoriser le trafic entrant sur le port 80 (HTTP) et le port 22 (SSH)
 ```
 iptables -A INPUT -p tcp --dport 22 -j ACCEPT
-iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -I INPUT ! -i lo -p tcp --dport 80 -j DROP
 ```
 * Pour tester, depuis une autre machine, essayer d'atteindre cette machine sur un autre port que le 80
 
